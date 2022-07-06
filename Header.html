@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <title>online medical store</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="css/pogo-slider.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- ALL JS FILES -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- ALL PLUGINS -->
+
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/IndexedDB.js"></script>
+
+    <script>
+
+
+        $(function () {
+            $('a').each(function () {
+                if ($(this).prop('href') == window.location.href) {
+                    $(this).addClass('nav-link active'); $(this).parents('li').addClass('nav-link active');
+                }
+            });
+        });
+
+        var session_UID = localStorage.getItem("SUID");
+        var session_Name = localStorage.getItem("SName");
+        var session_Provider = localStorage.getItem("SProvider");
+        //alert(session_UID);
+        //session_Email = 'here';
+        //alert(session_Email);
+        document.getElementById("info").innerText = "Welcome : " + session_Name;
+        if (session_UID == null || typeof session_UID == "undefined") {
+            document.getElementById("BA").style.display = "none";
+            document.getElementById("MP").style.display = "none";
+            document.getElementById("CP").style.display = "none";
+            document.getElementById("LN").style.display = "block";
+            document.getElementById("RS").style.display = "block";
+            document.getElementById("info").style.display = "none";
+            document.getElementById("LO").style.display = "none";
+            //alert('Please Login to Proceed');
+            //window.location.href = 'Login.html';
+
+        }
+        else {
+            document.getElementById("BA").style.display = "block";
+            document.getElementById("MP").style.display = "block";
+            if (session_Provider == null || session_Provider == "") {
+                document.getElementById("CP").style.display = "block";
+            }
+            else {
+                document.getElementById("CP").style.display = "none";
+            }
+            document.getElementById("LN").style.display = "none";
+            document.getElementById("RS").style.display = "none";
+            document.getElementById("info").style.display = "block";
+            document.getElementById("LO").style.display = "block";
+            //window.location.href = 'Login.html';
+        }
+
+
+    </script>
+
+</head>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+    <!-- LOADER -->
+    <!-- <div id="preloader">
+        <div class="loader">
+            <img src="images/preloader.gif" alt="" />
+        </div>
+    </div>end loader -->
+    <!-- END LOADER -->
+    <!-- Start top bar -->
+    <div class="main-top">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="right-top">
+
+                        <!--<a class="new-btn-d br-2" href="BookAppointment.html"><span>Book Appointment</span></a>
+                        <div class="mail-b"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> demo@sapcdc</a></div>-->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="wel-nots">
+                        <p></p>
+                    </div>
+                    <!--<div class="right-top">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End top bar -->
+    <!-- Start header -->
+    <header class="top-header">
+
+
+        <div style="float: right;height:100%">
+            <a id="info" class="new-btn-d br-1" href="MyProfile.html"><span></span></a>
+        </div>
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/zaid	.png" alt="image"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a id="LN" class="nav-link" href="Login.html">Login</a></li>
+                        <li><a id="RS" class="nav-link" href="Register.html">Register</a></li>
+                        <!--<li><a class="nav-link active" href="index.html">Home</a></li>-->
+                        <li><a class="nav-link" href="index.html">Home</a></li>
+                        <li><a class="nav-link" href="Services.html">Services</a></li>
+                        <li><a id="BA" class="nav-link" href="BookAppointment.html">Appointment</a></li>
+                        <li><a class="nav-link" href="Gallery.html">Gallery</a></li>
+                        <li><a class="nav-link" href="Doctor.html">Doctor</a></li>
+                        <li><a class="nav-link" href="Aboutus.html">About Us</a></li>
+                        <li><a id="MP" class="nav-link" href="MyProfile.html">My Profile</a></li>
+                        <li><a id="CP" class="nav-link" href="ChangePass.html">Change Password</a></li>
+                        <!--<li><a class="nav-link" href="Contact.html">Contact</a></li>-->
+                        <li><a id="LO" class="nav-link" href="LogOut.html">LogOut</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- End header -->
+
+    <a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
+
+    
+</body>
+</html>
