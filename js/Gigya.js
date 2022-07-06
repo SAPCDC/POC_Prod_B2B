@@ -10,21 +10,44 @@ function load() {
 }
 
 
-function SignInScreen() {
+function SignInScreen(flag) {
     
-    load();
-    //document.getElementById("divsigninn").style.display = "block"
+    //load();
+    console.log("here : " + flag);
+    if (flag == null || typeof flag == "undefined")
+    {
+        document.getElementById("divsignin").style.display = "none";
+        document.getElementById("LPNL").style.display = "block";
+    }
+    else
+    {
+        document.getElementById("divsignin").style.display = "block";
+        document.getElementById("LPNL").style.display = "none";
+    }
+    
     customLangParams = {
 
         this_field_is_required: 'Please enter %fieldname'
     };
+    if (flag == "ICL") {
+        
+        gigya.accounts.showScreenSet({
+            screenSet: 'Online_Medical-RegistrationLogin',
+            startScreen: 'gigya-login-screen',
+            customLang: customLangParams,
+            containerID: 'divsignin'
+        });
+    }
+    if (flag == "BCL") {
 
-    gigya.accounts.showScreenSet({
-        screenSet: 'Online_Medical-RegistrationLogin',
-        startScreen: 'gigya-login-screen',
-        customLang: customLangParams,
-        containerID: 'divsignin'
-    });
+        gigya.accounts.showScreenSet({
+            screenSet: 'Online_Medical-RegistrationLogin',
+            startScreen: 'Login-B2B',
+            customLang: customLangParams,
+            enabledProviders:'google',
+            containerID: 'divsignin'
+        });
+    }
     gigya.accounts.addEventHandlers({
         onLogin: onLogin
 
@@ -101,20 +124,46 @@ function Getdata(page,UID) {
         }
     });
 }
+function Store(flag)
+{
+    localStorage.setItem("flag", flag);
 
+}
 function SignUpScreen() {
     load();
+    let flag = localStorage.getItem("flag");
+    console.log(flag);
+    //window.location = "Register.html";
     customLangParams = {
 
         this_field_is_required: 'Please enter %fieldname'
     };
+    if (flag == null || typeof flag == "undefined") {
+        document.getElementById("divsignup").style.display = "none";
+        
+    }
+    else {
+        document.getElementById("divsignup").style.display = "block";
+        
+    }
+    if (flag == 'ICR')
+    {
+        gigya.accounts.showScreenSet({
+            screenSet: 'Online_Medical-RegistrationLogin',
+            startScreen: 'gigya-register-screen',
+            customLang: customLangParams,
+            containerID: 'divsignup'
+        });
+    }
 
-    gigya.accounts.showScreenSet({
-        screenSet: 'Online_Medical-RegistrationLogin',
-        startScreen: 'gigya-register-screen',
-        customLang: customLangParams,
-        containerID: 'divsignup'
-    });
+    if (flag == 'BCR') {
+        gigya.accounts.showScreenSet({
+            screenSet: 'Online_Medical-OrganizationRegistration',
+            startScreen: 'gigya-org-register-screen',
+            customLang: customLangParams,
+            containerID: 'divsignup'
+        });
+    }
 }
 
 function ShowEditScreen() {

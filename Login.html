@@ -19,29 +19,68 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 
-    <link rel="stylesheet" href="css/custom.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="css/pogo-slider.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css" />
-    
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
 
-   
+
+
 </head>
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" onload="SignInScreen();">
+<body id="home" onload="load();">
 
 
     <div id="header"></div>
     <div id="divsignin" style="display:none"></div>
-    <div class="popup-gallery row clearfix">
-        <div class="col-md-3 col-sm-6">
-            <div class="box-gallery">
-                <input type="button" name="Login">
-                
-            
-            </div>
+
+    <div id="LPNL" class="row">
+        <div class="column-1 project-3">
+            <h1 class="section-heading">Individual customers</h1>
+            <header class="top-header">
+
+                <nav class="navbar header-nav navbar-expand-lg">
+                    <div class="container">
+                        <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                            <ul class="navbar-nav">
+                                <li><a href="#" id="ICL" class="nav-link" onclick="SignInScreen('ICL');">Login</a></li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li><a href="Register.html" class="nav-link" onclick="Store('ICR');">Register</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+            </header>
         </div>
-    
-    
-    
+        <div class="column-2 project-3">
+            <h1 class="section-heading">Business customers</h1>
+            <header class="top-header">
+
+                <nav class="navbar header-nav navbar-expand-lg">
+                    <div class="container">
+                        <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                            <ul class="navbar-nav">
+                                <li><a href="#" class="nav-link" onclick="SignInScreen('BCL');">Login</a></li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li><a href="Register.html" class="nav-link" onclick="Store('BCR');">Register</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+            </header>
+        </div>
+
+    </div>
+
     <div id="footer"></div>
 
     <a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
@@ -62,6 +101,7 @@
     <script src="js/images-loded.min.js"></script>
 
     <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=4_zU_l5sFaCUWaU5W-0KFDzw"></script>
+    
 
 </body>
 </html>

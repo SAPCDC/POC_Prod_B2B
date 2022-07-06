@@ -1,10 +1,29 @@
 
+/*  Section 3  */
+.section-heading {
+    text-align: center;
+    vertical-align:top;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+
 /* Sizing for Project Containers  */
-.column-4 {
+.column-1 {
     float: left;
-    width: 21%;
+    width: 15%;
     padding: 10px;
     margin: 20px;
+    margin-left: auto;
+    height: 100%;
+}
+.column-2 {
+    float: right;
+    width: 15%;
+    padding: 10px;
+    margin: 20px;
+    margin-right:auto;
     height: 100%;
 }
 
@@ -20,7 +39,7 @@
 }
 
 .project-3 {
-    background-color: #209BFF;
+    background-color: #12557f;
 }
 
 .project-4 {
