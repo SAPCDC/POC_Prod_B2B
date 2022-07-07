@@ -1,6 +1,4 @@
 ﻿
-
-
 function load() {
     //Moesif CORS
     
@@ -10,26 +8,14 @@ function load() {
 }
 
 
-function SignInScreen(flag) {
+function SignInScreen() {
     
-    //load();
-    console.log("here : " + flag);
-    if (flag == null || typeof flag == "undefined")
-    {
-        document.getElementById("divsignin").style.display = "none";
-        document.getElementById("LPNL").style.display = "block";
-    }
-    else
-    {
-        document.getElementById("divsignin").style.display = "block";
-        document.getElementById("LPNL").style.display = "none";
-    }
+    load();
     
     customLangParams = {
 
         this_field_is_required: 'Please enter %fieldname'
     };
-    if (flag == "ICL") {
         
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
@@ -37,17 +23,7 @@ function SignInScreen(flag) {
             customLang: customLangParams,
             containerID: 'divsignin'
         });
-    }
-    if (flag == "BCL") {
-
-        gigya.accounts.showScreenSet({
-            screenSet: 'Online_Medical-RegistrationLogin',
-            startScreen: 'Login-B2B',
-            customLang: customLangParams,
-            enabledProviders:'google',
-            containerID: 'divsignin'
-        });
-    }
+    
     gigya.accounts.addEventHandlers({
         onLogin: onLogin
 
@@ -156,9 +132,9 @@ function SignUpScreen(flag) {
             customLang: customLangParams,
             containerID: 'divsignup'
         });
-    
-}
 
+    }
+}
 function ShowEditScreen() {
 
     
