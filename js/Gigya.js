@@ -129,18 +129,23 @@ function Store(flag)
     localStorage.setItem("flag", flag);
 
 }
-function SignUpScreen() {
+function SignUpScreen(flag) {
     load();
-    let flag = localStorage.getItem("flag");
+    //let flag = localStorage.getItem("flag");
     console.log(flag);
     //window.location = "Register.html";
     customLangParams = {
 
         this_field_is_required: 'Please enter %fieldname'
     };
-    if (flag == null || typeof flag == "undefined") {
-        document.getElementById("divsignup").style.display = "none";
-        
+    if (flag == 'b2b') {
+        //document.getElementById("divsignup").style.display = "none";
+        gigya.accounts.showScreenSet({
+            screenSet: 'Online_Medical-RegistrationLogin',
+            startScreen: 'gigya-register-screen',
+            customLang: customLangParams,
+            containerID: 'divsignup'
+        });
     }
     else {
         document.getElementById("divsignup").style.display = "block";
