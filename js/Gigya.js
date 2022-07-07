@@ -8,7 +8,7 @@ function load() {
 }
 
 
-function SignInScreen() {
+function SignInScreen(flag) {
     
     load();
     
@@ -16,13 +16,23 @@ function SignInScreen() {
 
         this_field_is_required: 'Please enter %fieldname'
     };
-        
+    if (flag == 'IC') {
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
             startScreen: 'gigya-login-screen',
             customLang: customLangParams,
             containerID: 'divsignin'
         });
+    }
+
+    if (flag == 'BC') {
+        gigya.accounts.showScreenSet({
+            screenSet: 'Online_Medical-RegistrationLogin',
+            startScreen: 'gigya-login-screen',
+            customLang: customLangParams,
+            containerID: 'divsignin'
+        });
+    }
     
     gigya.accounts.addEventHandlers({
         onLogin: onLogin
