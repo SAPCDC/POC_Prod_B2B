@@ -137,7 +137,7 @@ function SignUpScreen(flag) {
     if (flag == 'b2b') {
         //document.getElementById("divsignup").style.display = "none";
         gigya.accounts.showScreenSet({
-            screenSet: 'Online_Medical-RegistrationLogin',
+            screenSet: 'Online_Medical-OrganizationRegistration',
             startScreen: 'gigya-org-register-screen',
             customLang: customLangParams,
             containerID: 'divsignup'
