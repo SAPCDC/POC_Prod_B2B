@@ -16,7 +16,7 @@ function SignInScreen(flag) {
 
         this_field_is_required: 'Please enter %fieldname'
     };
-    if (flag == 'IC') {
+    if (flag == 'b2c') {
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
             startScreen: 'gigya-login-screen',
@@ -25,7 +25,7 @@ function SignInScreen(flag) {
         });
     }
 
-    if (flag == 'BC') {
+    if (flag == 'b2b') {
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
             startScreen: 'gigya-login-screen',
@@ -74,7 +74,7 @@ function onLogin(response) {
             if ((session_UID == null || typeof session_UID == "undefined") && errorCode == 0) {
 
 
-                window.location = 'Login.html';
+                window.location = 'Loginb2c.html';
 
             }
             else {
@@ -101,7 +101,7 @@ function Getdata(page,UID) {
         if (session_UID == null || typeof session_UID == "undefined") {
 
             
-                window.location = 'Login.html';
+                window.location = 'Loginb2c.html';
            
         }
         else {
@@ -226,7 +226,7 @@ function SignOut() {
 
             localStorage.clear()
             alert('Logged out');
-            window.location.href = 'Login.html';
+            window.location.href = 'Home.html';
 
 
         }
@@ -301,7 +301,7 @@ function CheckLogin() {
     if (session_UID == null || typeof session_UID == "undefined") {
         //flag = 0;
         alert('Please Login to Proceed');
-        window.location  = 'Login.html';
+        window.location  = 'Loginb2c.html';
 
     }
     else {
