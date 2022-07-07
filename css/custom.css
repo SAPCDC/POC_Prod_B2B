@@ -13,10 +13,10 @@
 .column-1 {
     float: left;
     width: 15%;
-    padding: 10px;
-    margin: 20px;
-    margin-left: auto;
-    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 0px;
+    
 }
 .column-2 {
     float: right;
@@ -66,4 +66,9 @@
 .project-text {
     text-align: center;
     font-size: 50px;
+}
+
+.vl {
+    border-left: 6px solid white;
+    height: 500px;
 }
