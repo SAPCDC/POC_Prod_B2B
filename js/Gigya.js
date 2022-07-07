@@ -138,7 +138,7 @@ function SignUpScreen(flag) {
 
         this_field_is_required: 'Please enter %fieldname'
     };
-    if (flag == 'b2b') {
+    if (flag == 'b2c') {
         //document.getElementById("divsignup").style.display = "none";
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
@@ -147,28 +147,16 @@ function SignUpScreen(flag) {
             containerID: 'divsignup'
         });
     }
-    else {
-        document.getElementById("divsignup").style.display = "block";
-        
-    }
-    if (flag == 'ICR')
-    {
+
+    if (flag == 'b2b') {
+        //document.getElementById("divsignup").style.display = "none";
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
-            startScreen: 'gigya-register-screen',
-            customLang: customLangParams,
-            containerID: 'divsignup'
-        });
-    }
-
-    if (flag == 'BCR') {
-        gigya.accounts.showScreenSet({
-            screenSet: 'Online_Medical-OrganizationRegistration',
             startScreen: 'gigya-org-register-screen',
             customLang: customLangParams,
             containerID: 'divsignup'
         });
-    }
+    
 }
 
 function ShowEditScreen() {
