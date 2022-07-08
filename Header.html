@@ -60,16 +60,21 @@
         //alert(session_Email);
         document.getElementById("info").innerText = "Welcome : " + session_Name;
         if (session_UID == null || typeof session_UID == "undefined") {
-            document.getElementById("BA").style.display = "none";
-            document.getElementById("MP").style.display = "none";
-            document.getElementById("CP").style.display = "none";
+
             document.getElementById("LN").style.display = "block";
             document.getElementById("RS").style.display = "block";
-            document.getElementById("info").style.display = "none";
+            document.getElementById("HM").style.display = "none";
+            document.getElementById("SE").style.display = "none";
+            document.getElementById("BA").style.display = "none";
+            document.getElementById("GE").style.display = "none";
+            document.getElementById("DT").style.display = "none";
+            document.getElementById("ABT").style.display = "none";
+            document.getElementById("MP").style.display = "none";
+            document.getElementById("CP").style.display = "none";
             document.getElementById("LO").style.display = "none";
-            //alert('Please Login to Proceed');
-            //window.location.href = 'Login.html';
-
+            document.getElementById("info").style.display = "none";
+            
+            
         }
         else {
             document.getElementById("BA").style.display = "block";
@@ -93,70 +98,32 @@
 </head>
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
-    <!-- LOADER -->
-    <!-- <div id="preloader">
-        <div class="loader">
-            <img src="images/preloader.gif" alt="" />
-        </div>
-    </div>end loader -->
-    <!-- END LOADER -->
-    <!-- Start top bar -->
-    <div class="main-top">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="right-top">
-
-                        <!--<a class="new-btn-d br-2" href="BookAppointment.html"><span>Book Appointment</span></a>
-                        <div class="mail-b"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> demo@sapcdc</a></div>-->
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="wel-nots">
-                        <p></p>
-                    </div>
-                    <!--<div class="right-top">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>-->
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- End top bar -->
-    <!-- Start header -->
-    <header class="top-header">
+        <header class="top-header">
 
 
-        <div style="float: right;height:100%">
+        <div style="float: right;">
             <a id="info" class="new-btn-d br-1" href="MyProfile.html"><span></span></a>
         </div>
         <nav class="navbar header-nav navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="images/zaid	.png" alt="image"></a>
+            <div>
+                <img href=Index.html" style="height:40px" src ="images/zaid.png" alt="image"/>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-
+</div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a id="LN" class="nav-link" href="Loginb2c.html">Login</a></li>
-                        <li><a id="RS" class="nav-link" href="Signupb2c.html">Sign up</a></li>-->
+                        <li><a id="RS" class="nav-link" href="Signupb2c.html">Sign up</a></li>
                         <!--<li><a class="nav-link active" href="index.html">Home</a></li>-->
-                        <li><a class="nav-link" href="Home.html">Home</a></li>
-                        <li><a class="nav-link" href="Services.html">Services</a></li>
+                        <li><a id="HM" class="nav-link" href="Index.html">Home</a></li>
+                        <li><a id="SE" class="nav-link" href="Services.html">Services</a></li>
                         <li><a id="BA" class="nav-link" href="BookAppointment.html">Appointment</a></li>
-                        <li><a class="nav-link" href="Gallery.html">Gallery</a></li>
-                        <li><a class="nav-link" href="Doctor.html">Doctor</a></li>
-                        <li><a class="nav-link" href="Aboutus.html">About Us</a></li>
+                        <li><a id="GE" class="nav-link" href="Gallery.html">Gallery</a></li>
+                        <li><a id="DT" class="nav-link" href="Doctor.html">Doctor</a></li>
+                        <li><a id="ABT" class="nav-link" href="Aboutus.html">About Us</a></li>
                         <li><a id="MP" class="nav-link" href="MyProfile.html">My Profile</a></li>
                         <li><a id="CP" class="nav-link" href="ChangePass.html">Change Password</a></li>
                         <!--<li><a class="nav-link" href="Contact.html">Contact</a></li>-->
@@ -165,7 +132,7 @@
 
                 </div>
 
-            </div>
+            
         </nav>
 
     </header>

@@ -69,6 +69,8 @@
 }
 
 .vl {
-    border-left: 6px solid white;
-    height: 500px;
+    border-left: 3px solid black;
+    height: 20px;
+    float: right;
+    margin-right: 10px;
 }

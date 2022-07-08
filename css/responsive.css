@@ -28,6 +28,7 @@
 	}
 	.top-header{
 		position: relative;
+		
 	}
 	.lbox-details{
 		display: block;
@@ -144,8 +145,9 @@
 		padding: 0px 15px;
 	}
 
-	.top-header{
-		position: relative;
+	.top-header {
+		
+		height: 150%
 	}
 	.lbox-details{
 		position: relative;
