@@ -226,7 +226,7 @@ function SignOut() {
 
             localStorage.clear()
             alert('Logged out');
-            window.location.href = 'Index.html';
+            window.location.href = 'index.html';
 
 
         }
