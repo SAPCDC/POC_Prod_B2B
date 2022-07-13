@@ -12,7 +12,7 @@
 /* Sizing for Project Containers  */
 .column-1 {
     float: left;
-    width: 15%;
+    width: 20%;
     padding: 10px;
     margin: 20px;
     margin-left: auto;
@@ -30,10 +30,7 @@
 
 
 /* Color and Images for Project Containers  */
-.project-1 {
-    background: url('../images/project-left.jpeg');
-    background-size: cover;
-}
+
 
 .project-2 {
     background-color: white;
@@ -41,6 +38,13 @@
 
 .project-3 {
     background-color: #12557f;
+    
+    background-size: cover;
+}
+.B2B {
+    background-color: #12557f;
+    background: url('/images/B2B.PNG');
+    background-size: cover 
 }
 
 .project-4 {

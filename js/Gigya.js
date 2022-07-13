@@ -23,12 +23,15 @@ function SignInScreen(flag) {
             customLang: customLangParams,
             containerID: 'divsignin'
         });
+
+
     }
 
     if (flag == 'b2b') {
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
             startScreen: 'gigya-login-screen',
+            include: "groups",
             customLang: customLangParams,
             containerID: 'divsignin'
         });
