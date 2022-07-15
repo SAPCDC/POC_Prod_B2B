@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+    <title>Mobile Ready Screen-Set Implementation Example</title>
+    <meta name="viewport" content="width=device-width"><!-- VERY IMPORTANT TO PLACE HERE!! -->
+    <script type="text/javascript" lang="javascript" src="https://cdns.gigya.com/js/gigya.js?apikey=4_oMwlIxZWipk7JkeWZ-b2LA"></script>
+    <script type="text/javascript">function openDelegatedAdmin() {
+  gigya.accounts.getAccountInfo({
+    include: 'groups,profile',
+      callback: function (event) {
+          console.log("raw:" + event);
+          console.log("OnLogin:" + JSON.stringify(event));
+      var params = {
+        "orgId": event.groups.organizations[0].orgId
+      }
+      gigya.accounts.b2b.openDelegatedAdminLogin(params);
+    }
+  });
+}
+function showAuthorization() {
+  gigya.accounts.getAccountInfo({
+    include: 'groups,profile',
+    callback: function(event) {
+      var params = {
+        "orgId": event.groups.organizations[0].orgId,
+        "appId": "T1REAG4YYTLOX4LGBCC7",
+        "callback": function(event) {
+          alert(JSON.stringify(event, null, 2));
+        }
+      }
+      gigya.accounts.b2b.auth.getAssets(params);
+    }
+  });
+}</script>
+</head>
+<body>
+    <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-OrganizationRegistration'});">Organization Registration</a>
+    <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin', startScreen:'gigya-login-screen'});">Login</a>
+    <a href="#" onclick="openDelegatedAdmin();">Delegated Admin Console</a>
+    <a href="#" onclick="showAuthorization();">Show Authorization</a>
+    <a href="#" onclick="gigya.accounts.logout();">Logout</a>
+</body>
+</html>

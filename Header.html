@@ -55,10 +55,11 @@
         var session_UID = localStorage.getItem("SUID");
         var session_Name = localStorage.getItem("SName");
         var session_Provider = localStorage.getItem("SProvider");
+        var session_OrgName = localStorage.getItem("SOrgName");
         //alert(session_UID);
         //session_Email = 'here';
         //alert(session_Email);
-        document.getElementById("info").innerText = "Welcome : " + session_Name;
+        document.getElementById("info").innerText = "Welcome : " + session_Name + "-" + session_OrgName;
         if (session_UID == null || typeof session_UID == "undefined") {
 
             document.getElementById("LN").style.display = "block";
@@ -86,7 +87,7 @@
                 document.getElementById("CP").style.display = "none";
             }
             document.getElementById("LN").style.display = "none";
-            document.getElementById("RS").style.display = "none";
+            //document.getElementById("RS").style.display = "none";
             document.getElementById("info").style.display = "block";
             document.getElementById("LO").style.display = "block";
             //window.location.href = 'Login.html';

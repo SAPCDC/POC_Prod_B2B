@@ -24,48 +24,95 @@ function SignInScreen(flag) {
             containerID: 'divsignin'
         });
 
+        gigya.accounts.addEventHandlers({
+            onLogin: onb2cLogin
+
+        });
 
     }
 
     if (flag == 'b2b') {
+    
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
             startScreen: 'gigya-login-screen',
-            include: "groups",
             customLang: customLangParams,
             containerID: 'divsignin'
         });
+        gigya.accounts.addEventHandlers({
+            onLogin: onb2bLogin
+
+        });
     }
     
-    gigya.accounts.addEventHandlers({
-        onLogin: onLogin
+    
+}
+function onb2bLogin(response) {
+    console.log("Onb2bLogin:" + JSON.stringify(response));
+    let UID = response.UID;
 
-    });
+    var params = {
+        "UID": UID,
+        "include": "groups,profile"
+
+    }
+
+    gigya.accounts.getAccountInfo(params, { callback: onTb2bLogin });
+
+    function onTb2bLogin(response) {
+        console.log("OnTb2bLogin:" + JSON.stringify(response));
+        let errorCode = response.errorCode;
+        let UID = response.UID;
+        var key = "UID";
+        let DBName = "Users";
+        let Table = "Users_Info";
+        let Data = JSON.parse(JSON.stringify(response));
+        ProcessDB(DBName, Table, Data, key);
+       
+        getUID(DBName, Table, UID).then(function (SUID) {
+            const Data = SUID.split(",");
+            localStorage.setItem("SUID", Data[0]);
+            localStorage.setItem("SName", Data[1]);
+            localStorage.setItem("SProvider", Data[2]);
+            localStorage.setItem("SOrgName", Data[3]);
+            var session_UID = localStorage.getItem("SUID");
+            var session_Name = localStorage.getItem("SName");
+            if ((session_UID == null || typeof session_UID == "undefined") && errorCode == 0) {
+
+
+                window.location = 'Login.html';
+
+            }
+            else {
+                //console.log(session_UID);
+                window.location = 'index.html';
+            }
+        });
+    }
 }
 
-function onLogin(response) {
-    console.log("OnLogin:" + JSON.stringify(response));
-
+function onb2cLogin(response) {
+    //console.log("flag : " + flag);
+    console.log("Onb2cLogin:" + JSON.stringify(response));
     let UID = response.UID;
     var key = "UID";
     let DBName = "Users";
     let Table = "Users_Info";
     ProcessDB(DBName, Table, response, key);
-    //Getdata('index.html');
+
     gigya.accounts.showScreenSet({
         screenSet: 'Online_Medical-RegistrationLogin',
         startScreen: 'gigya-tfa-verification-screen',
         customLang: customLangParams,
-        onAfterSubmit: onTLogin,
+        onAfterSubmit: onTb2cLogin,
         containerID: 'divsignin'
     });
-    gigya.accounts.addEventHandlers({
-        onLogin: onTLogin
-
-    });
     
-    function onTLogin(response) {
-        console.log("OnTLogin:" + JSON.stringify(response));
+
+
+    function onTb2cLogin(response) {
+
+        console.log("OnTb2cLogin:" + JSON.stringify(response));
         let errorCode = response.errorCode;
         getUID(DBName, Table, UID).then(function (SUID) {
             const Data = SUID.split(",");
@@ -77,7 +124,7 @@ function onLogin(response) {
             if ((session_UID == null || typeof session_UID == "undefined") && errorCode == 0) {
 
 
-                window.location = 'Loginb2c.html';
+                window.location = 'Login.html';
 
             }
             else {
@@ -86,8 +133,6 @@ function onLogin(response) {
             }
         });
     }
-
-    
 }
 
 function Getdata(page,UID) {

@@ -6,10 +6,13 @@
             return;
         }
         else {
+            
             console.log("Your browser support IndexedDB");
+            
+
             //alert(Key);
             // open the CRM database with the version 1
-            var request =  indexedDB.open(DBName, 2);
+            var request =  indexedDB.open(DBName, 3);
 
             // create the Contacts object store and indexes
             request.onupgradeneeded = (event) => {
@@ -37,7 +40,9 @@
 
             // handle the success event
             request.onsuccess = (event) => {
+                
                 console.log("On_ProcessDB_Onsuccess");
+                
                 insert(event, Table, Data);
             }
 
@@ -50,7 +55,6 @@
 
 
 function insert(event,Table,Data) {
-
 
     var db = event.target.result;
 	var txn = event.target.transaction;
@@ -116,6 +120,7 @@ function getUIDChild(event, Table, UID, resolve) {
     var SUID;
     var SName;
     let db = event.target.result;
+    var SOrgName;
 	//var txn = event.target.transaction;
     let txn = db.transaction(Table, 'readwrite');
     let store = txn.objectStore(Table);
@@ -129,8 +134,8 @@ function getUIDChild(event, Table, UID, resolve) {
         SUID = query.result.UID;
         SName = query.result.profile.firstName + " " + query.result.profile.lastName;
         Sprovider = query.result.provider;
-        //alert(Sprovider);
-        SUID = SUID + "," + SName + "," + Sprovider;
+        SOrgName = query.result.groups.organizations[0].orgName;
+        SUID = SUID + "," + SName + "," + Sprovider + "," + SOrgName;
         console.table(query.result); // result objects
         return resolve(SUID);
 
