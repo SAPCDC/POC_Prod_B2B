@@ -11,13 +11,13 @@ function load() {
 function SignInScreen(flag) {
     
     load();
-    
+    localStorage.setItem("flag",flag);
     customLangParams = {
 
         this_field_is_required: 'Please enter %fieldname'
     };
     if (flag == 'b2c') {
-        localStorage.setItem("flag","b2c");
+        
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
             startScreen: 'gigya-login-screen',
@@ -33,7 +33,7 @@ function SignInScreen(flag) {
     }
 
     if (flag == 'b2b') {
-        localStorage.setItem("flag", "b2b");
+        
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
             startScreen: 'gigya-login-screen',

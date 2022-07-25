@@ -136,12 +136,13 @@ function getUIDChild(event, Table, UID, resolve) {
         Sprovider = query.result.provider;
         if (localStorage.getItem("flag") == 'b2b') {
             SOrgName = query.result.groups.organizations[0].orgName;
-            SUID = SUID + "," + SName + "," + Sprovider ;
+            SUID = SUID + "," + SName + "," + Sprovider + "," + SOrgName;
+            
         }
         else
         {
             //SOrgName = query.result.groups.organizations[0].orgName;
-            SUID = SUID + "," + SName + "," + Sprovider + "," + SOrgName;
+            SUID = SUID + "," + SName + "," + Sprovider;
         }
         console.table(query.result); // result objects
         return resolve(SUID);
