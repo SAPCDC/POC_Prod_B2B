@@ -54,16 +54,18 @@
 
         var session_UID = localStorage.getItem("SUID");
         var session_Name = localStorage.getItem("SName");
+        alert(session_Name);
         var session_Provider = localStorage.getItem("SProvider");
         var session_OrgName = localStorage.getItem("SOrgName");
-        //alert(session_UID);
+        var flag = localStorage.getItem("flag");
+        alert(flag);
         //session_Email = 'here';
         //alert(session_Email);
-        if (session_OrgName == null || typeof session_OrgName == "undefined") {
-            document.getElementById("info").innerText = + session_Name;
+        if (flag =='b2c') {
+            document.getElementById("info").innerText = "Hi ! " + " " + session_Name;
         }
         else {
-            document.getElementById("info").innerText = + session_Name + "-" + session_OrgName;
+            document.getElementById("info").innerText = "Hi ! " + " " +  session_Name + "-" + session_OrgName;
         }
         if (session_UID == null || typeof session_UID == "undefined") {
 
