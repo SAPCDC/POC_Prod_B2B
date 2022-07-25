@@ -1381,11 +1381,9 @@ select.form-control:not([size]):not([multiple]){
 .footer-box {
 	background: #292f35;
 	padding: 20px 0;
-	/*position: absolute;
-	bottom: 0;
 	width: 100%;
-	height: 60px;  Height of the footer 
-	*/
+	4
+	
 }
 
 .footer-box .footer-company-name{

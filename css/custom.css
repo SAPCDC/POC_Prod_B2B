@@ -11,20 +11,17 @@
 
 /* Sizing for Project Containers  */
 .column-1 {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    margin: 20px;
-    margin-left: auto;
-    height: 100%
+    
+    height:50%;
+    width:100%
     
 }
 .column-2 {
-    float: right;
+    
     width: 15%;
     padding: 10px;
     margin: 20px;
-    margin-right:auto;
+    
     height: 100%;
 }
 
