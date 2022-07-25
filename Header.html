@@ -59,7 +59,12 @@
         //alert(session_UID);
         //session_Email = 'here';
         //alert(session_Email);
-        document.getElementById("info").innerText = "Welcome : " + session_Name + "-" + session_OrgName;
+        if (session_OrgName == null || typeof session_OrgName == "undefined") {
+            document.getElementById("info").innerText = + session_Name;
+        }
+        else {
+            document.getElementById("info").innerText = + session_Name + "-" + session_OrgName;
+        }
         if (session_UID == null || typeof session_UID == "undefined") {
 
             document.getElementById("LN").style.display = "block";
