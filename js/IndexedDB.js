@@ -134,6 +134,9 @@ function getUIDChild(event, Table, UID, resolve) {
         SUID = query.result.UID;
         SName = query.result.profile.firstName + " " + query.result.profile.lastName;
         Sprovider = query.result.provider;
+        if (localStorage.getItem("flag") == 'b2b') {
+            SOrgName = query.result.groups.organizations[0].orgName;
+        }
         SOrgName = query.result.groups.organizations[0].orgName;
         SUID = SUID + "," + SName + "," + Sprovider + "," + SOrgName;
         console.table(query.result); // result objects
