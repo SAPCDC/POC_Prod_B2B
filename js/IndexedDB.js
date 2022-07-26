@@ -300,7 +300,7 @@ function getRecorsChild(event,Table,UID) {
 
         console.log("On_getRecordsChild_onsuccess");
         var result = event.target.result;
-        alert(result);
+        alert(result.groups.organizations[0].orgName);
         document.getElementById('UID').value = result.UID;
         document.getElementById('email').value = result.profile.email;
         document.getElementById('firstName').value = result.profile.firstName;
