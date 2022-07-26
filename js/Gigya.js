@@ -12,7 +12,6 @@ function SignInScreen(flag) {
     
     load();
     localStorage.setItem("flag", flag);
-    alert(localStorage.getItem("flag"));
     customLangParams = {
 
         this_field_is_required: 'Please enter %fieldname'
