@@ -300,12 +300,13 @@ function getRecorsChild(event,Table,UID) {
 
         console.log("On_getRecordsChild_onsuccess");
         var result = event.target.result;
-        alert(result.groups.organizations[0].orgName);
+        //alert(result.groups.organizations[0].orgName);
         document.getElementById('UID').value = result.UID;
         document.getElementById('email').value = result.profile.email;
         document.getElementById('firstName').value = result.profile.firstName;
         document.getElementById('lastName').value = result.profile.lastName;
-        if (sessionStorage.getItem("flag") == "b2b") {
+        
+        if (localStorage.getItem("flag") == 'b2b') {
             document.getElementById('Organization').value = result.groups.organizations[0].orgName;
             document.getElementById('Department').value = result.groups.organizations[0].department;
             document.getElementById('Job').value = result.groups.organizations[0].job;

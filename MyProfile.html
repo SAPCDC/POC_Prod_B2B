@@ -36,20 +36,10 @@
     <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=4_zU_l5sFaCUWaU5W-0KFDzw"></script>
     <script src="js/IndexedDB.js"></script>
     <script>
-        //CheckLogin();
-        //var session_UID = localStorage.getItem("SUID");
-        //var session_Name = localStorage.getItem("SName");
-        //if (session_UID == null || typeof session_UID == "undefined") {
-        //    //alert('empty');
-        //    window.location.href = 'Login.html';
-        //}
-        //else {
+        if (localStorage.getItem("flag") == 'b2b') {
 
-        //    var DBName = "Users";
-        //    var Table = "Users_Info";
-        //    //var UID = sessionStorage.UID;
-        //    getRecords(DBName, Table, session_UID);
-        //}
+            document.getElementById("Organizationd").style.display = "block";
+        }
 
     </script>
 </head>
@@ -90,28 +80,28 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div id="Organizationd" class="form-group" style="display:none">
                         <label>Organization</label>
                         <input type="text" readonly="readonly" class="form-control" id="Organization" />
 
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div id="Departmentd" class="form-group" style="display:none">
                         <label>Department</label>
                         <input type="text" readonly="readonly" class="form-control" id="Department" />
 
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div id="Jobd" class="form-group" style="display:none">
                         <label>Job</label>
                         <input type="text" readonly="readonly" class="form-control" id="Job" />
 
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div id="Rolesd" class="form-group" style="display:none">
                         <label>Roles</label>
                         <input type="text" readonly="readonly" class="form-control" id="Roles" />
 
