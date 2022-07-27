@@ -315,6 +315,11 @@ function getRecorsChild(event,Table,UID) {
 
             roles.forEach(function (roleid) {
                 role = localStorage.getItem(roleid);
+                if (role == "Delegated Admin") {
+                    localStorage.setItem("DACheck", "Yes");
+                    alert(localStorage.getItem("DACheck"));
+                }
+                
                 role = role + "\n";
                 rolenames = rolenames + role;
             });

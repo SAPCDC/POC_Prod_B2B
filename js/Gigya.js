@@ -88,7 +88,7 @@ function onb2bLogin(response) {
             }
             else {
                 //console.log(session_UID);
-                window.location = 'LandingPage.html';
+                window.location = 'Landingb2b.html';
             }
         });
     }
@@ -127,12 +127,12 @@ function onb2cLogin(response) {
             if ((session_UID == null || typeof session_UID == "undefined") && errorCode == 0) {
 
 
-                window.location = 'Login.html';
+                window.location = 'index.html';
 
             }
             else {
                 //console.log(session_UID);
-                window.location = 'index.html';
+                window.location = 'Landingb2c.html';
             }
         });
     }
@@ -152,7 +152,7 @@ function Getdata(page,UID) {
         if (session_UID == null || typeof session_UID == "undefined") {
 
             
-                window.location = 'Loginb2c.html';
+                window.location = 'index.html';
            
         }
         else {

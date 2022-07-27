@@ -1401,14 +1401,20 @@ select.form-control:not([size]):not([multiple]){
 	color: #000000;
 }
 
-
-
-
-/*------------------------------------------------------------------
+.tile {
+	float: left;
+	background-color: #293955;
+	padding: 1.4em;
+	/*-moz-border-radius: 1.4em;*/
+	border-radius: 1.4em;
+	color: #FFF;
+	margin: 0.6em;
+}
+	/*------------------------------------------------------------------
     Subscribe
 -------------------------------------------------------------------*/
 
-.subscribe-box{
+	.subscribe-box{
 	padding: 70px 0px;
 	background: url(../images/footer-bg.jpg) no-repeat center;
 	background-size: cover;

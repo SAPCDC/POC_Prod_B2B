@@ -42,13 +42,30 @@
                 <p>Below are the list of Applications which you have access :</p>
             </td>
             </tr>
-        <tr style="height:80%">
+        <tr>
             
-            <td>app1</td>
+            <td align="center" valign="middle"><div class="tile" id="DAT">
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a href="#" class="nav-link">Delegated Admin</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </nav>
+        </header>
+</div>
+            
+</td>
             
         </tr>
         <tr>
             <td>
+                
                 <br />
                 <br />
                 <br />
@@ -90,6 +107,12 @@
     <script src="js/custom.js"></script>
     <script type="text/javascript">
         document.getElementById("dname").innerText = "Welcome : " + localStorage.getItem("SName");
+        if (localStorage.getItem("DACheck") == "Yes") {
+            document.getElementById("DAT").style.display = "block";
+        }
+        else {
+            document.getElementById("DAT").style.display = "none";
+        }
     </script>
 </body>
 </html>
