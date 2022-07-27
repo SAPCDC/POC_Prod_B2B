@@ -305,12 +305,24 @@ function getRecorsChild(event,Table,UID) {
         document.getElementById('email').value = result.profile.email;
         document.getElementById('firstName').value = result.profile.firstName;
         document.getElementById('lastName').value = result.profile.lastName;
-        
+        var role;
+        var rolenames='';
         if (localStorage.getItem("flag") == 'b2b') {
             document.getElementById('Organization').value = result.groups.organizations[0].orgName;
             document.getElementById('Department').value = result.groups.organizations[0].department;
             document.getElementById('Job').value = result.groups.organizations[0].job;
-            document.getElementById('Roles').value = result.groups.organizations[0].roles;
+            var roles = result.groups.organizations[0].roles;
+
+            roles.forEach(function (roleid) {
+                role = localStorage.getItem(roleid);
+                role = role + "\n";
+                rolenames = rolenames + role;
+            });
+            document.getElementById('Roles').value = rolenames;
+
+
+            
+            //document.getElementById('Roles').value = result.groups.organizations[0].roles;
         }
             console.dir(result);
         

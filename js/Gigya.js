@@ -33,7 +33,9 @@ function SignInScreen(flag) {
     }
 
     if (flag == 'b2b') {
-        
+
+        localStorage.setItem("485c9a75-2633-4f90-b48d-dd2b3a891d86", "Delegated Admin");
+        localStorage.setItem("cbdc0b70-6d69-4946-8443-060de6fbefbc", "Ordering");
         gigya.accounts.showScreenSet({
             screenSet: 'Online_Medical-RegistrationLogin',
             startScreen: 'gigya-login-screen',
