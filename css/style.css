@@ -1379,7 +1379,7 @@ select.form-control:not([size]):not([multiple]){
 }
 
 .footer-box {
-	position: fixed;
+	position:absolute;
 	left: 0;
 	bottom: 0;
 	width: 100%;
