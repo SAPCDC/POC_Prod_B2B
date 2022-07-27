@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    
 
 </head>
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" onload="load();">
@@ -41,31 +42,32 @@
                 <br />
                 <p>Below are the list of Applications which you have access :</p>
             </td>
-            </tr>
+        </tr>
         <tr>
-            
-            <td align="center" valign="middle"><div class="tile" id="DAT">
-    <header class="top-header">
-        <nav class="navbar header-nav navbar-expand-lg">
-            <div class="container">
-                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
-                    <ul class="navbar-nav">
-                        <li><a href="#" class="nav-link">Delegated Admin</a></li>
-                    </ul>
 
+            <td align="center" valign="middle">
+                <div class="tile" id="DAT">
+                    <header class="top-header">
+                        <nav class="navbar header-nav navbar-expand-lg">
+                            <div class="container">
+                                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                                    <ul class="navbar-nav">
+                                        <li><a class="nav-link" href="#" target="_self"   onclick="opendelegateadmin(sessionStorage.getItem('OrgID'));">Delegated Admin</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </nav>
+                    </header>
                 </div>
-            </div>
 
-        </nav>
-        </header>
-</div>
-            
-</td>
-            
+            </td>
+
         </tr>
         <tr>
             <td>
-                
+
                 <br />
                 <br />
                 <br />
@@ -87,9 +89,9 @@
             </td>
         </tr>
     </table>
-            
 
-            
+
+
 
     <!-- ALL JS FILES -->
     <script src="js/jquery.min.js"></script>
@@ -114,5 +116,6 @@
             document.getElementById("DAT").style.display = "none";
         }
     </script>
+    <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=4_oMwlIxZWipk7JkeWZ-b2LA"></script>
 </body>
 </html>

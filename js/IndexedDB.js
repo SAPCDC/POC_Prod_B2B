@@ -121,6 +121,7 @@ function getUIDChild(event, Table, UID, resolve) {
     var SName;
     let db = event.target.result;
     var SOrgName;
+    var Orgid;
 	//var txn = event.target.transaction;
     let txn = db.transaction(Table, 'readwrite');
     let store = txn.objectStore(Table);
@@ -138,8 +139,19 @@ function getUIDChild(event, Table, UID, resolve) {
         if (localStorage.getItem("flag") == 'b2b') {
             SOrgName = query.result.groups.organizations[0].orgName;
             SUID = SUID + "," + SName + "," + Sprovider + "," + SOrgName;
-            
-        }
+            Orgid = query.result.groups.organizations[0].orgId;
+            var roles = query.result.groups.organizations[0].roles;
+            sessionStorage.setItem("OrgID", Orgid);
+            roles.forEach(function (roleid) {
+                role = localStorage.getItem(roleid);
+                if (role == "Delegated Admin") {
+                    localStorage.setItem("DACheck", "Yes");
+                    
+                }
+
+                }
+            )}
+      
         else
         {
             //SOrgName = query.result.groups.organizations[0].orgName;
@@ -315,11 +327,6 @@ function getRecorsChild(event,Table,UID) {
 
             roles.forEach(function (roleid) {
                 role = localStorage.getItem(roleid);
-                if (role == "Delegated Admin") {
-                    localStorage.setItem("DACheck", "Yes");
-                    alert(localStorage.getItem("DACheck"));
-                }
-                
                 role = role + "\n";
                 rolenames = rolenames + role;
             });

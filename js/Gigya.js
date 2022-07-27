@@ -209,6 +209,12 @@ function ShowEditScreen() {
 
 }
 
+function opendelegateadmin(orgid) {
+    alert(orgid);
+
+    gigya.accounts.b2b.openDelegatedAdminLogin({ "orgId": orgid });
+}
+
 async function Update(response) {
     //console.log("OnUpdate:" + JSON.stringify(response));
     var params = {
@@ -371,3 +377,4 @@ function NewUserStore(response) {
     let Table = "Users_Info";
     ProcessDB(DBName, Table, response, UID);
 }
+
