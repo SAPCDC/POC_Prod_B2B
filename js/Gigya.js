@@ -83,12 +83,12 @@ function onb2bLogin(response) {
             if ((session_UID == null || typeof session_UID == "undefined") && errorCode == 0) {
 
 
-                window.location = 'Login.html';
+                window.location = 'index.html';
 
             }
             else {
                 //console.log(session_UID);
-                window.location = 'index.html';
+                window.location = 'LandingPage.html';
             }
         });
     }
