@@ -310,6 +310,7 @@ function getRecorsChild(event,Table,UID) {
             document.getElementById('Organization').value = result.groups.organizations[0].orgName;
             document.getElementById('Department').value = result.groups.organizations[0].department;
             document.getElementById('Job').value = result.groups.organizations[0].job;
+            document.getElementById('Roles').value = result.groups.organizations[0].roles;
         }
             console.dir(result);
         
