@@ -480,6 +480,15 @@ button:focus{
 	padding: 22% 0%;
 }
 
+.lbox-details-LP {
+	display: table-cell;
+	text-align:left;
+	
+	
+}
+
+
+
 .lbox-details::before{
 	content: "";
 	background: rgba(0,0,0,0.5);
@@ -500,6 +509,17 @@ button:focus{
 	z-index: 3;
 }
 
+.lbox-details-LP h1 {
+	font-size: 20px;
+	font-family: 'Times New Roman' Arial;
+	color: white;
+	font-weight: 300;
+	position: relative;
+	z-index: 3;
+	text-align:center
+}
+
+
 .lbox-details h2{
 	font-size: 48px;
 	color: #ffffff;
@@ -511,6 +531,13 @@ button:focus{
 	color: #ffffff;
 	position: relative;
 	z-index: 3;
+}
+
+.lbox-details-LP p {
+	color:burlywood;
+	font-family: 'Times New Roman' Arial
+	position: relative;
+	text-align:left
 }
 .lbox-details p strong{
 	color: #00cb86;
@@ -529,7 +556,24 @@ button:focus{
 	display: inline-block;
 	z-index: 3;
 }
+.lbox-details-LP a.btn {
+	background: #12557f;
+	padding: 10px 20px;
+	font-size: 15px;
+	text-transform: capitalize;
+	color: #ffffff;
+	border-radius: 0px;
+	border: 1px solid burlywood;
+	position: relative;
+	display: inline-block;
+	z-index: 3;
+}
 .lbox-details a.btn:hover{
+	background: #00cb86;
+	color: #ffffff;
+}
+
+.lbox-details-LP a.btn:hover {
 	background: #00cb86;
 	color: #ffffff;
 }
@@ -1410,16 +1454,21 @@ select.form-control:not([size]):not([multiple]){
 	color: #FFF;
 	margin: 0.6em;
 }
+.tile .h2 {
+		border-bottom: solid 1px #bcc7d8;
+		margin-top: 0;
+		padding-top: 0;
+		font-size: 1.2em
+}
 	/*------------------------------------------------------------------
     Subscribe
 -------------------------------------------------------------------*/
-
-	.subscribe-box{
-	padding: 70px 0px;
-	background: url(../images/footer-bg.jpg) no-repeat center;
-	background-size: cover;
-	position: relative;
-}
+	.subscribe-box {
+		padding: 70px 0px;
+		background: url(../images/footer-bg.jpg) no-repeat center;
+		background-size: cover;
+		position: relative;
+	}
 
 .subscribe-box::before{
 	content: "";
