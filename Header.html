@@ -63,11 +63,11 @@
         //alert(session_Email);
         if (flag =='b2c') {
             document.getElementById("info").innerText = "Hi ! " + " " + session_Name;
-            document.getElementById("HM").style.href = "Landingb2c.html";
+            document.getElementById("HML").style.href = "Landingb2c.html";
         }
         else {
             document.getElementById("info").innerText = "Hi ! " + " " +  session_Name + "\n" + session_OrgName;
-            document.getElementById("HM").style.href = "Landingb2b.html"
+            document.getElementById("HMl").style.href = "Landingb2b.html"
         }
         if (session_UID == null || typeof session_UID == "undefined") {
 
@@ -97,7 +97,7 @@
                 document.getElementById("CP").style.display = "none";
             }
             document.getElementById("HM").style.display = "none";
-            document.getElementById("HML").style.display = "none";
+            document.getElementById("HML").style.display = "block";
             //document.getElementById("RS").style.display = "none";
             document.getElementById("info").style.display = "block";
             document.getElementById("LO").style.display = "block";
