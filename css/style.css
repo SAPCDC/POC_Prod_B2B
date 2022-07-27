@@ -1379,13 +1379,13 @@ select.form-control:not([size]):not([multiple]){
 }
 
 .footer-box {
-	position:absolute;
+	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
 	background-color: #292f35;
 	text-align: right;
-	padding: 20px 0;
+	padding: 15px 0;
 }
 
 .footer-box .footer-company-name{
