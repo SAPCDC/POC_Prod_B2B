@@ -108,7 +108,7 @@
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
     <script type="text/javascript">
-        document.getElementById("dname").innerText = "Welcome : " + localStorage.getItem("SName");
+        document.getElementById("dname").innerText = "Welcome : " + sessionStorage.getItem("SName");
         if (localStorage.getItem("DACheck") == "Yes") {
             document.getElementById("DAT").style.display = "block";
         }
