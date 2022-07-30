@@ -74,12 +74,12 @@ function onb2bLogin(response) {
        
         getUID(DBName, Table, UID).then(function (SUID) {
             const Data = SUID.split(",");
-            localStorage.setItem("SUID", Data[0]);
-            localStorage.setItem("SName", Data[1]);
-            localStorage.setItem("SProvider", Data[2]);
-            localStorage.setItem("SOrgName", Data[3]);
-            var session_UID = localStorage.getItem("SUID");
-            var session_Name = localStorage.getItem("SName");
+            sessionStorage.setItem("SUID", Data[0]);
+            sessionStorage.setItem("SName", Data[1]);
+            sessionStorage.setItem("SProvider", Data[2]);
+            sessionStorage.setItem("SOrgName", Data[3]);
+            var session_UID = sessionStorage.getItem("SUID");
+            var session_Name = sessionStorage.getItem("SName");
             if ((session_UID == null || typeof session_UID == "undefined") && errorCode == 0) {
 
 
