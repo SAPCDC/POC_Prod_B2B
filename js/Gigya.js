@@ -281,7 +281,7 @@ function SignOut() {
     function printResponse(response) {
         if (response.errorCode == 0) {
 
-            localStorage.clear()
+            sessionStorage.clear()
             alert('Logged out');
             window.location.href = 'index.html';
 
