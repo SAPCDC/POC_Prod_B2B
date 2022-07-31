@@ -39,12 +39,12 @@
         <tr>
             <td>
                 <label id="dname" style="font-size:xx-large"> </label>
-                
+
             </td>
         </tr>
         <tr>
             <td>
-        
+
                 <br />
                 <br />
                 <br />
@@ -86,13 +86,10 @@
     <script src="js/custom.js"></script>
     <script type="text/javascript">
         document.getElementById("dname").innerText = "Welcome : " + localStorage.getItem("SName");
-        if (localStorage.getItem("DACheck") == "Yes") {
-            document.getElementById("DAT").style.display = "block";
-        }
-        else {
-            document.getElementById("DAT").style.display = "none";
-        }
+        
+
+        var session_UID = CheckLogin();
     </script>
-    <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=4_oMwlIxZWipk7JkeWZ-b2LA"></script>
+        <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=4_oMwlIxZWipk7JkeWZ-b2LA"></script>
 </body>
 </html>

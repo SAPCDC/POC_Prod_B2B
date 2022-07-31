@@ -358,7 +358,7 @@ function CheckLogin() {
     if (session_UID == null || typeof session_UID == "undefined") {
         //flag = 0;
         alert('Please Login to Proceed');
-        window.location  = 'Loginb2c.html';
+        window.location  = 'index.html';
 
     }
     else {
