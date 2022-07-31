@@ -35,59 +35,7 @@
 
 
     <div id="header"></div>
-    <script type="text/javascript">
-
-        function services() {
-
-            alert("your Ordering site will be open in new tab");
-            window.open("Services/Ordering.html", "_blank");
-        }
-        var mytable = "<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr>";
-        mytable += "<td colspan=\"3\">" +
-            "<label id=\"dname\" style=\"font-size:xx-large\"> </label>" +
-            "<br />" + 
-            "<p>Below are the list of services which you have access :</p>" + 
-            "</td></tr ><tr>";
-        const roleids = sessionStorage.getItem("roles");
-        
-        roleids.split(",").forEach(function (roleid) {
-            role = localStorage.getItem(roleid);
-            if (role == "Delegated Admin") {
-
-            }
-            else {
-                mytable += "<td align=\"center\" valign=\"middle\">" +
-                    "<div class=\"tile\" id=\"DAT\">" +
-                    "<header class=\"top-header\">" +
-                    "<nav class=\"navbar header-nav navbar-expand-lg\">" +
-                    "<div class=\"container\">" +
-                    "<div class=\"collapse navbar-collapse justify-content-end\" id=\"navbar-wd\">" +
-                    "<ul class=\"navbar-nav\">" +
-                    "<li><a class=\"nav - link\" href=\"#\" target=\"_self\" onclick=\"services()\">" + role + "</a ></li > " +
-                    "</ul>" +
-
-                    "</div>" +
-                    "</div>" +
-
-                    "</nav>" +
-                    "</header>" +
-                    "</div>" +
-
-                    "</td>"
-            }
-        })
-      
-       
-        mytable += "</tr><tr><td>"
-        mytable += "<br/><br/><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> " + 
-                
-                "<div id=\"footer\"></div>" + 
-            "</td></tr ></tbody ></table > ";
-
-        document.write(mytable);
-        
-
-    </script>
+    
 
 
     <!-- ALL JS FILES -->
@@ -105,16 +53,73 @@
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
     <script type="text/javascript">
-        document.getElementById("dname").innerText = "Welcome : " + sessionStorage.getItem("SName");
-        //if (localStorage.getItem("DACheck") == "Yes") {
-        //    document.getElementById("DAT").style.display = "block";
-        //}
-        //else {
-        //    document.getElementById("DAT").style.display = "none";
-        //}
 
-        
-            var session_UID = CheckLogin();
+        function services() {
+
+            alert("your Ordering site will be open in new tab");
+            window.open("Services/Ordering.html", "_blank");
+        }
+        var session_UID = CheckLogin();
+        if (session_UID != null || typeof session_UID != "undefined") {
+            var mytable = "<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr>";
+            mytable += "<td colspan=\"3\">" +
+                "<label id=\"dname\" style=\"font-size:xx-large\"> </label>" +
+                "<br />" +
+                "<p>Below are the list of services which you have access :</p>" +
+                "</td></tr ><tr>";
+            const roleids = sessionStorage.getItem("roles");
+
+            roleids.split(",").forEach(function (roleid) {
+                role = localStorage.getItem(roleid);
+                if (role == "Delegated Admin") {
+
+                }
+                else {
+                    mytable += "<td align=\"center\" valign=\"middle\">" +
+                        "<div class=\"tile\" id=\"DAT\">" +
+                        "<header class=\"top-header\">" +
+                        "<nav class=\"navbar header-nav navbar-expand-lg\">" +
+                        "<div class=\"container\">" +
+                        "<div class=\"collapse navbar-collapse justify-content-end\" id=\"navbar-wd\">" +
+                        "<ul class=\"navbar-nav\">" +
+                        "<li><a class=\"nav - link\" href=\"#\" target=\"_self\" onclick=\"services()\">" + role + "</a ></li > " +
+                        "</ul>" +
+
+                        "</div>" +
+                        "</div>" +
+
+                        "</nav>" +
+                        "</header>" +
+                        "</div>" +
+
+                        "</td>"
+                }
+            })
+
+
+            mytable += "</tr><tr><td>"
+            mytable += "<br/><br/><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> " +
+
+                "<div id=\"footer\"></div>" +
+                "</td></tr ></tbody ></table > ";
+
+            document.write(mytable);
+
+
+            document.getElementById("dname").innerText = "Welcome : " + sessionStorage.getItem("SName");
+            //if (localStorage.getItem("DACheck") == "Yes") {
+            //    document.getElementById("DAT").style.display = "block";
+            //}
+            //else {
+            //    document.getElementById("DAT").style.display = "none";
+            //}
+
+
+            //var session_UID = CheckLogin();
+        }
+
+
+
     </script>
     <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=4_oMwlIxZWipk7JkeWZ-b2LA"></script>
 </body>
