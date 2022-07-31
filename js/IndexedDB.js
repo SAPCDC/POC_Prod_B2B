@@ -136,7 +136,7 @@ function getUIDChild(event, Table, UID, resolve) {
         //SName = query.result.profile.firstName + " " + query.result.profile.lastName;
         SName = query.result.profile.firstName;
         Sprovider = query.result.provider;
-        if (localStorage.getItem("flag") == 'b2b') {
+        if (sessionStorage.getItem("flag") == 'b2b') {
             SOrgName = query.result.groups.organizations[0].orgName;
             SUID = SUID + "," + SName + "," + Sprovider + "," + SOrgName;
             Orgid = query.result.groups.organizations[0].orgId;
@@ -146,7 +146,7 @@ function getUIDChild(event, Table, UID, resolve) {
             roles.forEach(function (roleid) {
                 role = localStorage.getItem(roleid);
                 if (role == "Delegated Admin") {
-                    localStorage.setItem("DACheck", "Yes");
+                    sessionStorage.setItem("DACheck", "Yes");
                     
                 }
 
@@ -320,7 +320,7 @@ function getRecorsChild(event,Table,UID) {
         document.getElementById('lastName').value = result.profile.lastName;
         var role;
         var rolenames='';
-        if (localStorage.getItem("flag") == 'b2b') {
+        if (sessionStorage.getItem("flag") == 'b2b') {
             document.getElementById('Organization').value = result.groups.organizations[0].orgName;
             document.getElementById('Department').value = result.groups.organizations[0].department;
             document.getElementById('Job').value = result.groups.organizations[0].job;
