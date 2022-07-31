@@ -331,7 +331,7 @@ function getRecorsChild(event,Table,UID) {
                 rolenames = rolenames + role;
             });
             document.getElementById('Roles').value = rolenames;
-
+            sessionStorage.setItem("roles", rolenames);
 
             
             //document.getElementById('Roles').value = result.groups.organizations[0].roles;
