@@ -142,6 +142,7 @@ function getUIDChild(event, Table, UID, resolve) {
             Orgid = query.result.groups.organizations[0].orgId;
             var roles = query.result.groups.organizations[0].roles;
             sessionStorage.setItem("OrgID", Orgid);
+            sessionStorage.setItem("roles", roles);
             roles.forEach(function (roleid) {
                 role = localStorage.getItem(roleid);
                 if (role == "Delegated Admin") {
@@ -331,7 +332,7 @@ function getRecorsChild(event,Table,UID) {
                 rolenames = rolenames + role;
             });
             document.getElementById('Roles').value = rolenames;
-            sessionStorage.setItem("roles", rolenames);
+            
 
             
             //document.getElementById('Roles').value = result.groups.organizations[0].roles;

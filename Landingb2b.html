@@ -45,7 +45,8 @@
             "</td></tr ><tr>";
         var roles = sessionStorage.getItem(roles);
         alert(roles);
-        roles.forEach(function (role) {
+        roles.forEach(function (roleid) {
+            role = localStorage.getItem(roleid);
 
             mytable += "<td align=\"center\" valign=\"middle\">" + 
                 "<div class=\"tile\" id=\"DAT\">" +
