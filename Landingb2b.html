@@ -37,46 +37,55 @@
     <div id="header"></div>
     <script type="text/javascript">
 
+        function services() {
+
+            alert("you are redirecting to Ordering site");
+            window.open("Services/Ordering.html", "Ordering", "resizable");
+        }
         var mytable = "<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr>";
         mytable += "<td colspan=\"3\">" +
             "<label id=\"dname\" style=\"font-size:xx-large\"> </label>" +
             "<br />" + 
             "<p>Below are the list of services which you have access :</p>" + 
             "</td></tr ><tr>";
-        var roleids = sessionStorage.getItem("roles");
-        alert(roleids);
-        roleids.forEach(function (roleid) {
+        const roleids = sessionStorage.getItem("roles");
+        
+        roleids.split(",").forEach(function (roleid) {
             role = localStorage.getItem(roleid);
+            if (role == "Delegated Admin") {
 
-            mytable += "<td align=\"center\" valign=\"middle\">" + 
-                "<div class=\"tile\" id=\"DAT\">" +
+            }
+            else {
+                mytable += "<td align=\"center\" valign=\"middle\">" +
+                    "<div class=\"tile\" id=\"DAT\">" +
                     "<header class=\"top-header\">" +
-                        "<nav class=\"navbar header-nav navbar-expand-lg\">" + 
-                            "<div class=\"container\">" + 
-                                "<div class=\"collapse navbar-collapse justify-content-end\" id=\"navbar-wd\">" + 
-                                    "<ul class=\"navbar-nav\">" + 
-                "<li><a class=\"nav - link\" href=\"#\" target=\"_self\">" + role + "</a ></li > " +
-                                    "</ul>" + 
+                    "<nav class=\"navbar header-nav navbar-expand-lg\">" +
+                    "<div class=\"container\">" +
+                    "<div class=\"collapse navbar-collapse justify-content-end\" id=\"navbar-wd\">" +
+                    "<ul class=\"navbar-nav\">" +
+                    "<li><a class=\"nav - link\" href=\"#\" target=\"_self\" onclick=\"services()\">" + role + "</a ></li > " +
+                    "</ul>" +
 
-                                "</div>" + 
-                            "</div>" +
+                    "</div>" +
+                    "</div>" +
 
-                        "</nav>" + 
-                    "</header>" + 
-                "</div>" +
+                    "</nav>" +
+                    "</header>" +
+                    "</div>" +
 
-            "</td>"
-            
-        });
+                    "</td>"
+            }
+        })
+      
        
         mytable += "</tr><tr><td>"
-        mytable += "</tr>< br /><br />< br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> " + 
+        mytable += "<br/><br/><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> " + 
                 
                 "<div id=\"footer\"></div>" + 
             "</td></tr ></tbody ></table > ";
 
         document.write(mytable);
-        alert(mytable);
+        
 
     </script>
 
