@@ -353,8 +353,8 @@ function ChangePassScreen() {
 
 function CheckLogin() {
     //let flag;
-    var session_UID = localStorage.getItem("SUID");
-    var session_Name = localStorage.getItem("SName");
+    var session_UID = sessionStorage.getItem("SUID");
+    
     if (session_UID == null || typeof session_UID == "undefined") {
         //flag = 0;
         alert('Please Login to Proceed');
