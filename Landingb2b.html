@@ -43,7 +43,8 @@
             "<br />" + 
             "<p>Below are the list of services which you have access :</p>" + 
             "</td></tr ><tr>";
-        var roles = localStorage.getItem(roles);
+        var roles = sessionStorage.getItem(roles);
+        alert(roles);
         roles.forEach(function (role) {
 
             mytable += "<td align=\"center\" valign=\"middle\">" + 
